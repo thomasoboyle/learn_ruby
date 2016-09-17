@@ -22,3 +22,7 @@ def multiply(array)
   end
   total
 end
+
+def power(number, to_power_of)
+  new_number = number ** to_power_of
+end
