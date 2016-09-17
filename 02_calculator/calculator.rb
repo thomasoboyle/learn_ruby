@@ -13,3 +13,12 @@ def sum(array)
   end
   total
 end
+
+
+def multiply(array)
+  total = 1
+  array.each do |i|
+    total *= i
+  end
+  total
+end
