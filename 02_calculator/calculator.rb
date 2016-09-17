@@ -26,3 +26,12 @@ end
 def power(number, to_power_of)
   new_number = number ** to_power_of
 end
+
+def factorial(number=0)
+  array = [number]
+  while number > 1
+    array << number - 1
+    number -= 1
+  end
+  multiply(array)
+end
