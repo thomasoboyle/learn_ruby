@@ -6,6 +6,11 @@ def shout(words)
   words.upcase
 end
 
-def repeat(words, times=2)
-  (words + " ") * times # leaves a trailing space :/
+def repeat(word, times=2)
+  words = word
+  while times > 1
+    words += " " + word
+    times -= 1
+  end
+  words
 end
