@@ -14,3 +14,8 @@ def repeat(word, times=2)
   end
   words
 end
+
+def start_of_word(string, index)
+  index -= 1
+  letters=string[0..index]
+end
