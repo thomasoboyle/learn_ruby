@@ -27,6 +27,8 @@ end
 
 def titleize(title)
   array = title.split(' ')
-  array.map { |i| i.capitalize! }
+  array.map do |i|
+    i.capitalize! unless i == ('and' || 'or') # Still need to find a solution for words like "the" and "a"
+  end
   array.join(" ")
 end
