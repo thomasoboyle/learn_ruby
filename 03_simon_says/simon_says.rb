@@ -26,9 +26,13 @@ def first_word(phrase)
 end
 
 def titleize(title)
-  array = title.split(' ')
-  array.map do |i|
-    i.capitalize! unless i == ('and' || 'or') # Still need to find a solution for words like "the" and "a"
+  words = title.split.map do |word|
+    if %w(the and over).include?(word)
+      word
+    else
+      word.capitalize
+    end
   end
-  array.join(" ")
+  words.first.capitalize!
+  words.join(" ")
 end
