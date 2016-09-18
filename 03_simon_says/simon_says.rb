@@ -24,3 +24,9 @@ def first_word(phrase)
   array = phrase.split(' ')
   array[0]
 end
+
+def titleize(title)
+  array = title.split(' ')
+  array.map { |i| i.capitalize! }
+  array.join(" ")
+end
