@@ -1,3 +1,5 @@
 class Book
-# write your code here
+attr_reader :title
+  def title=(words)
+  end
 end
