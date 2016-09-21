@@ -16,8 +16,7 @@ def repeat(word, times=2)
 end
 
 def start_of_word(string, index)
-  index -= 1
-  letters = string[0..index]
+  letters = string[0...index]
 end
 
 def first_word(phrase)
