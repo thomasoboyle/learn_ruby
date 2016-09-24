@@ -1,10 +1,8 @@
 class Book
 
-  def title=(words)
+  def Book.title
     words.capitalize!
   end
-
-  def title
-    @title
-  end
 end
+
+Book.title
