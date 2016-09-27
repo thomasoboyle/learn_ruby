@@ -8,8 +8,15 @@ class Book
   end
 
   private
-  def titlieze(title)
-    title.capitalize!
-  end
 
+  def titlieze(title)
+    lower_case = %w(and in the of an)
+    title.capitalize.split.map do |word|
+      if stop_words.include?(word)
+        word
+      else
+        word.capitalize
+      end.join(" ")
+    end
+  end
 end
