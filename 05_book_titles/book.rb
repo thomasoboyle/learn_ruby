@@ -1,7 +1,5 @@
 class Book
-  def title
-    @title
-  end
+attr_reader :title
 
   def title=(title)
     @title = titlieze(title)
@@ -10,13 +8,13 @@ class Book
   private
 
   def titlieze(title)
-    lower_case = %w(and in the of an)
+    stop_words = %w(and in the of an a)
     title.capitalize.split.map do |word|
       if stop_words.include?(word)
         word
       else
         word.capitalize
-      end.join(" ")
-    end
+      end
+    end.join(" ")
   end
 end
