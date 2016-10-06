@@ -1,4 +1,18 @@
-def translate(word)
+def translate(phrase)
+  if phrase.include?(" ")
+    array = phrase.split(" ")
+    translated = []
+    array.each do |word|
+      translated << iggpay(word)
+    end
+    translated.join(" ")
+
+  else
+    iggpay(phrase)
+  end
+end
+
+def iggpay(word)
   if word.start_with?("a", "e", "i", "o", "u")
     word_end = "ay"
   else
