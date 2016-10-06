@@ -8,6 +8,7 @@
 # # Timer
 
 require 'timer'
+require 'pry'
 
 describe "Timer" do
   before(:each) do
