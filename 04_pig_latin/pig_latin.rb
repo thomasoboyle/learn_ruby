@@ -13,20 +13,25 @@ def translate(phrase)
 end
 
 def iggpay(word)
-  if word.start_with?("a", "e", "i", "o", "u")
-    word_end = "ay"
-  else
-    letter = word[0]
-    word = word.delete!(letter)
-
-    if word.start_with?("a", "e", "i", "o", "u")
-      word_end = letter + "ay"
-    else
-      second_letter = word[0]
-      word = word.delete!(second_letter)
-      word_end = letter + second_letter + "ay"
-    end
-
+  letters = []
+  while !word.start_with?("a", "e", "i", "o", "u",)
+    letters << piggify(word)
   end
+  word_end = word_ender(letters)
   word + word_end
+end
+
+def piggify(word)
+  letter = word[0]
+  if letter == "q"
+    word = word.delete!(letter + "u")
+    letter = letter + "u"
+  else
+    word = word.delete!(letter)
+    letter
+  end
+end
+
+def word_ender(letters)
+  letters.join + "ay"
 end
