@@ -11,38 +11,35 @@ class Timer
 
   def spliter
     if @seconds < 10
-      puts @seconds
       @seconds = sprintf("%02d", @seconds)
       @minutes = "00"
       @hours   = "00"
-    elsif @seconds >= 10 && @seconds < 60
-      ones = @seconds%10
-      tens = @seconds/10
-      @seconds = "#{tens}" + "#{ones}"
-      @minutes = "00"
-      @hours   = "00"
+    elsif seconds_calc
     elsif minutes_calc
     end
   end
 
 
   def time_string
-    if @seconds = 0
-      "00:00:00"
-    else
+    spliter
     "#{@hours}:#{@minutes}:#{@seconds}"
-    end
+  end
+
+  def seconds_calc
+    @seconds >= 10 && @seconds < 60
+    ones = @seconds%10
+    tens = @seconds/10
+    @seconds = "#{tens}" + "#{ones}"
+    @minutes = "00"
+    @hours   = "00"
   end
 
   def minutes_calc
-    if @seconds >= 60 && @seconds > 3600
-      @minutes   = @seconds%60
-      left_over  = hundreds%10
-      @seconds   = "#{@minutes}" + "#{left_over}" 
-      thousands  = @seconds/60
-    else
-    'kats'
-    end
+    @seconds >= 60 && @seconds > 3600
+    @minutes   = @seconds%60
+    left_over  = hundreds%10
+    @seconds   = "#{@minutes}" + "#{left_over}" 
+    thousands  = @seconds/60
   end 
 end
 
